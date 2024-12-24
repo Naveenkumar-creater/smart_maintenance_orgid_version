@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:suja_shoie_app/feature/presentation/pages/barcode_generator_page.dart';
+
 import 'package:suja_shoie_app/feature/presentation/pages/login_page.dart';
-import 'package:suja_shoie_app/feature/presentation/pages/spalsh_page.dart';
+
 import 'package:suja_shoie_app/feature/presentation/providers/additional_datapoint_provider.dart';
 import 'package:suja_shoie_app/feature/presentation/providers/asset_list_provider.dart';
 import 'package:suja_shoie_app/feature/presentation/providers/bottom_tap_provider.dart';

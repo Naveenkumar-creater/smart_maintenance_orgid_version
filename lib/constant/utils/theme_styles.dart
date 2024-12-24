@@ -39,7 +39,7 @@ ThemeData themeData(BuildContext context, bool isDarkTheme) {
               isDarkTheme ? const Color(0xFF212121) : const Color(0xFF25476A),
           titleTextStyle: const TextStyle(color: Colors.white)),
       buttonTheme: Theme.of(context).buttonTheme.copyWith(
-          colorScheme: isDarkTheme
+      colorScheme: isDarkTheme
               ? const ColorScheme.dark()
               : const ColorScheme.light()));
 }

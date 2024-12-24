@@ -14,8 +14,6 @@ class CheckListDataSourceimpl extends CheckListStatusDataSource {
         await checkListStatusClient.getStatusCount(count, toDate, token);
 
     final result = ChecklistStatusModel.fromJson(response);
-
-    // ignore: avoid_print
     print(result);
 
     return result;
