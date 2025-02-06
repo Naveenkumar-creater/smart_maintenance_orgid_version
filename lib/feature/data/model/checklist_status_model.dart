@@ -7,8 +7,14 @@ class ChecklistStatusModel extends ChecklistStatusEntity {
 
   factory ChecklistStatusModel.fromJson(Map<String, dynamic> json) {
     final checklistStatus = json['response_data']['checklist_status'];
-    return ChecklistStatusModel(
-      count: checklistStatus['count'],
-    );
+
+    if (checklistStatus is Map<String, dynamic>) {
+      return ChecklistStatusModel(
+        count: checklistStatus['count'] ?? 0, // Default to 0 if count is missing
+      );
+    } else {
+      // Handle unexpected response (e.g., error message as a string)
+      return ChecklistStatusModel(count: 0); // Default to 0 or handle as needed
+    }
   }
 }

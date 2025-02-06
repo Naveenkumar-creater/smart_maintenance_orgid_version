@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:suja_shoie_app/feature/presentation/widget/home_page_widget/work_schedule/chart/progress_bar.dart';
 import 'package:suja_shoie_app/feature/presentation/widget/home_page_widget/work_schedule/qr_workorder_data/scan_barcode.dart';
 
 import 'package:suja_shoie_app/constant/utils/responsive.dart';
@@ -8,7 +9,7 @@ import 'package:suja_shoie_app/constant/utils/responsive.dart';
 import '../../providers/theme_providers.dart';
 import '../../../../constant/utils/theme_styles.dart';
 import 'work_schedule/chart/bar_chart.dart';
-import 'work_schedule/chart/progress_bar.dart';
+
 import '../notification_widget/notifications.dart';
 import 'work_schedule/chart/chart.dart';
 import 'work_schedule/workorder_widget/work_order.dart';
@@ -40,13 +41,13 @@ class WorkSchedule extends StatelessWidget {
                 const SizedBox(
                   width: defaultPadding / 2,
                 ),
-              if (Responsive.isDesktop(context))
-                Expanded(flex: 1, child: ProgressBar(themeState: themeState)),
+             if (Responsive.isDesktop(context))
+                Expanded(flex: 1, child: Notifications(themeState: themeState, title: 'Chart',)),
               const SizedBox(
                 width: defaultPadding / 2,
               ),
               if (Responsive.isDesktop(context))
-                Expanded(flex: 1, child: Notifications(themeState: themeState)),
+                Expanded(flex: 1, child: Notifications(themeState: themeState, title: 'Notifications',)),
             ],
           ),
           const SizedBox(
@@ -65,7 +66,7 @@ class WorkSchedule extends StatelessWidget {
               if (Responsive.isDesktop(context))
                 Expanded(flex: 1, child: BarChart(themeState: themeState)),
               if (Responsive.isMobile(context))
-                Expanded(flex: 1, child: Notifications(themeState: themeState)),
+                Expanded(flex: 1, child: Notifications(themeState: themeState,title: "Notification",)),
               if (!Responsive.isDesktop(context))
                 const SizedBox(
                   width: defaultPadding / 2,
@@ -112,7 +113,7 @@ class WorkSchedule extends StatelessWidget {
               if (!Responsive.isDesktop(context))
                 Expanded(
                   flex: 1,
-                  child: Notifications(themeState: themeState),
+                  child: Notifications(themeState: themeState, title: "",),
                 ),
               if (!Responsive.isDesktop(context))
                 const SizedBox(

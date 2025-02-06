@@ -17,7 +17,9 @@ import 'feature/presentation/providers/checklist_provider.dart';
 import 'feature/presentation/providers/datapoint_provider.dart';
 import 'feature/presentation/providers/get_machine_count_provider.dart';
 import 'feature/presentation/providers/initiate_pause_provider.dart';
+import 'feature/presentation/providers/location_provider.dart';
 import 'feature/presentation/providers/notification_provider.dart';
+import 'feature/presentation/providers/orgid_provider.dart';
 import 'feature/presentation/providers/overdue_notification_provider.dart';
 import 'feature/presentation/providers/qrscanner_provider.dart';
 import 'feature/presentation/providers/sm_datapoint_provider.dart';
@@ -104,6 +106,8 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider<AssetListProvider>(
             create: (_) => AssetListProvider(),
           ),
+          ChangeNotifierProvider<LocationProvider>(create: (_)=>LocationProvider()),
+          ChangeNotifierProvider<OrgIdProvider>(create: (_)=>OrgIdProvider())
         ],
         child: Consumer<ThemeProvider>(
           builder: (context, themeProvider, child) {

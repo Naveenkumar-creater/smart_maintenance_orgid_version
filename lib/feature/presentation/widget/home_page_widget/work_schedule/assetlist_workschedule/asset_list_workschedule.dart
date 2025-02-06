@@ -7,6 +7,7 @@ import '../../../../api_services/checklist_service.dart';
 import '../../../../api_services/qrscanner_service.dart';
 import '../../../../pages/main_page.dart';
 import '../../../../providers/checklist_provider.dart';
+import '../../../../providers/orgid_provider.dart';
 import '../../../../providers/theme_providers.dart';
 import 'asset_list_expended.dart';
 
@@ -39,10 +40,11 @@ Future<void> _fetchCheckList() async {
   try {
     // // Simulate a 2-second loading delay
     // await Future.delayed(const Duration(seconds: 1));
-
+final orgId=Provider.of<OrgIdProvider>(context,listen: false).orgid;
     await _checkListService.getCheckList(
       context: context,
       id: widget.assetId,
+      orgid: orgId ?? 0
     ); 
 
     setState(() {

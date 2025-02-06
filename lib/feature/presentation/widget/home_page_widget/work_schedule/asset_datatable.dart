@@ -5,6 +5,8 @@ import 'package:suja_shoie_app/feature/presentation/api_services/asset_list_serv
 import 'package:suja_shoie_app/feature/presentation/providers/asset_list_provider.dart';
 import 'package:suja_shoie_app/feature/presentation/widget/home_page_widget/work_schedule/assetlist_workschedule/asset_list_workschedule.dart';
 
+import '../../../providers/orgid_provider.dart';
+
 class AssetListDataTable extends StatefulWidget {
   final int statuscount;
 
@@ -32,9 +34,11 @@ class _AssetListDataTableState extends State<AssetListDataTable> {
 
   Future<void> _fetchAssetList() async {
     try {
+      final orgId=Provider.of<OrgIdProvider>(context,listen: false).orgid;
       await _assetListService.getAssetList(
         context: context,
         count: widget.statuscount,
+        orgid: orgId ?? 0
       );
       setState(() {
         isLoading = false; // Set isLoading to false when data is fetched

@@ -5,9 +5,11 @@ import 'package:suja_shoie_app/feature/presentation/widget/notification_widget/n
 
 
 class Notifications extends StatelessWidget {
+  final String title;
   const Notifications({
     super.key,
     required this.themeState,
+    required this.title
   });
   final ThemeProvider themeState;
 
@@ -30,7 +32,7 @@ class Notifications extends StatelessWidget {
               children: [
                 
                 NotificationCard(context),
-                const Headings(text:'Notifications'),
+                 Headings(text:title),
                 const SizedBox(height:6)
               ]),
         ),
