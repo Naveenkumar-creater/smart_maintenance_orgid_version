@@ -436,8 +436,9 @@ class _CheckPointDetailsState extends State<CheckPointDetails> {
 
         // Set the initial dropdown values based on checklist data here
         for (int index = 0; index < checklist.length; index++) {
-          var newValue =
-              getStatusValue(checklist[index].acrdcheckpointinspectionresult);
+          var newValue = getStatusValue(checklist[index].acrdcheckpointinspectionresult);
+
+
           selectedDropdownValues[index] = [newValue];
 
           if (newValue == "Failed" || newValue == "Conditionally Passed") {
@@ -810,6 +811,7 @@ class _CheckPointDetailsState extends State<CheckPointDetails> {
               ?.add(datapoint); // Add this datapoint to the current checkpoint
         }
       }
+      
       checklistRequest.checkPoints
           ?.add(checkpoint); // Add the checkpoint to the checklist
     }
@@ -1478,6 +1480,7 @@ class _CheckPointDetailsState extends State<CheckPointDetails> {
                                                                                 .isEmpty)
                                                                         ? Text(
                                                                             "")
+                                                                            
                                                                         : (((lowerRangeValue != null && upperRangeValue != null) && isValidInteger(lowerRangeValue) && isValidInteger(upperRangeValue) && (double.tryParse(lowerRangeValue) ?? 0) <= (double.tryParse(datapointControllers[index].text) ?? 0) && (double.tryParse(upperRangeValue!) ?? 0) >= (double.tryParse(datapointControllers[index].text) ?? 0)) ||
                                                                                 (datapointControllers[index].text == item!.amtsValue) // Compare entered value with expected value
                                                                             )
@@ -1567,6 +1570,7 @@ class _CheckPointDetailsState extends State<CheckPointDetails> {
                             if (isConfirmButtonVisible)
                               ElevatedButton(
                                 onPressed: () {
+                                  
                                   if (formKey.currentState!.validate()) {
                                     isConfirmButtonVisible = false;
 
