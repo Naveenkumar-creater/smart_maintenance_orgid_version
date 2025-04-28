@@ -10,7 +10,6 @@ class SmDataPointProvider extends ChangeNotifier {
 
   void setUser(SmDataPointEntity user) {
     _user = user;
-
     notifyListeners();
   }
 }
